@@ -30,7 +30,8 @@ public class MixedActions {
 	/** Cancel fishing rod usage by attempting to switch away from fishing rods, and returns <code>true</code> when the attempt has begun successfully. Actions after the specified cancel duration should expect the fishing line to be broken already.
 	* <br/>For main hand only, because this measure does not make sense for the offhand at all, and the method will immediately refuse. Useful to prevent avoidable durability drop with this method, while still allowing hard cancellation via explicit usage. */
 	public boolean cancelRodUsage(LocalPlayer player, long cancelDuration) {
-		// TODO: Implement natural slot shifting - Detect closest unmatched slot on either direction of scrolling, then decide which direction to scroll to accordingly. Should be useful to help evade overly stringent server-side anti-cheat.
+		// Implementation of natural fishing line break goes here.
+		// TODO: Implement natural slot scrolling - Instead of directly switching to the slot, "scroll" to it instead. Should be useful to help evade overly stringent server-side anti-cheat.
 		if (player == null) return true; // No need to prompt further actions.
 		if (cancelDuration <= 0) return false;
 		final byte rodHandMatchResult = PlayerUtils.matchItemOnHands(player, Common::isFishingRod);

@@ -38,7 +38,10 @@
 	"options.autofish.open_water_new_algorithm.tooltip": "\u00A76New implementation more closely\nfollowing the documented open water\nvalidation process on \u00A7eMinecraft Wiki\u00A76.\u00A7r\n\n\u00A7fAffects bobber block test as well.\nTurn off to restore legacy behavior.",
 
 	"options.autofish.noisy_detection.title": "Noisy Detection Notification",
-	"options.autofish.noisy_detection.tooltip": "\u00A76Keep notifying the player of detection\nresults, regardless of previous status.\nAffects the following:\u00A7r\n\u00A7f- Open water detection\n- Item rod test",
+	"options.autofish.noisy_detection.tooltip": "\u00A76Keep notifying the player of detection\nresults, regardless of previous status.\nAffects:\u00A7r\n\u00A7f- Open water detection\n- Item rod test",
+
+	"options.autofish.avoid_unnecessary_usage.title": "Avoid Unnecessary Usage",
+	"options.autofish.avoid_unnecessary_usage.tooltip": "\u00A76When enabled, the mod will avoid unneeded\ndurability consumption by trying out\nalternatives. Affects:\u00A7r\n\u00A7f- Fishing cancellation",
 
 	"options.autofish.legacy_persistence.title": "Legacy Persistent Fishing (WIP)",
 	"options.autofish.legacy_persistence.tooltip": "\u00A76Instead of using the newer state-aware\nalgorithm, switch back to the legacy\n\u00A7ePersistent Mode\u00A76 implementation.\u00A7r\n\n\u00A7aNew\u00A7f: Gathers various states, counts time\ndurations, and reels-in accordingly.\n\u00A7cOld\u00A7f: Scans every \u00A7e10\u00A7f seconds, and reels if\nthe bobber isn't in fishable liquid at that\ninstant.",

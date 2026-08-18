@@ -57,8 +57,7 @@ public class PersistentMode {
 					modInstance.getConfig().openWaterNewAlgo(),
 					modInstance.getConfig().unsafeFluids()
 				)) return;
-				// TODO: Allow the player to disable natural rod cancellation.
-				if (true && mixedActions.cancelRodUsage(player, rodCancelDelay)) {
+				if (modInstance.getConfig().avoidUnnecessaryUsage() && mixedActions.cancelRodUsage(player, rodCancelDelay)) {
 					modInstance.getScheduler().scheduleAction(
 						ActionType.RESTORE_ROD_STATUS,
 						rodCancelDelay + 50,

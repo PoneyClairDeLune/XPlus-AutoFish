@@ -9,6 +9,7 @@ import troy.autofish.LogSession;
 public class Config {
 	private Pattern compiledClearLagMatcher;
 
+	@Expose boolean avoidUnnecessaryUsage = true;
 	@Expose int damageSafeMargin = 1;
 	@Expose boolean legacyPersistenceBreakMe = true; // PLACEHOLDER!
 	@Expose boolean modEnabled = true;
@@ -48,6 +49,9 @@ public class Config {
 		return changed;
 	}
 
+	public boolean avoidUnnecessaryUsage() {
+		return avoidUnnecessaryUsage;
+	}
 	public int damageSafeMargin() {
 		return damageSafeMargin;
 	}
@@ -85,13 +89,17 @@ public class Config {
 		return clearLagRegex;
 	}
 
+	public void avoidUnnecessaryUsage(boolean value) {
+		avoidUnnecessaryUsage = value;
+	}
 	public void damageSafeMargin(int value) {
 		if (value < 1) value = 1;
 		if (value > 32) value = 32;
 		damageSafeMargin = value;
 	}
 	public void legacyPersistence(boolean value) {
-		legacyPersistenceBreakMe = value;
+		//legacyPersistenceBreakMe = value;
+		legacyPersistenceBreakMe = true;
 	}
 	public void modEnabled(boolean value) {
 		modEnabled = value;
