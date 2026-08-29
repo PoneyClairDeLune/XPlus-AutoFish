@@ -167,6 +167,20 @@ public class AutofishScreenBuilder {
 			booleanTextComponent
 		).build();
 
+		// Should the mod attempt to avoid unnecessary rod usage.
+		AbstractConfigListEntry<Boolean> toggleAvoidUnnecessaryUsage = entryBuilder.startBooleanToggle(
+			Component.translatable("options.autofish.avoid_unnecessary_usage.title"),
+			config.avoidUnnecessaryUsage()
+		).setDefaultValue(
+			defaults.avoidUnnecessaryUsage()
+		).setTooltip(
+			Component.translatable("options.autofish.avoid_unnecessary_usage.tooltip")
+		).setSaveConsumer(newValue -> {
+			modAutofish.getConfig().avoidUnnecessaryUsage(newValue);
+		}).setYesNoTextSupplier(
+			booleanTextComponent
+		).build();
+
 		// Should the persistent mode use the legacy implementation.
 		AbstractConfigListEntry<Boolean> toggleLegacyPersistence = entryBuilder.startBooleanToggle(
 			Component.translatable("options.autofish.legacy_persistence.title"),
@@ -268,6 +282,7 @@ public class AutofishScreenBuilder {
 		subCatBuilderAdvanced.add(toggleOpenWaterNewAlgo);
 		subCatBuilderAdvanced.add(toggleNoisyDetection);
 		subCatBuilderAdvanced.add(toggleLegacyPersistence);
+		subCatBuilderAdvanced.add(toggleAvoidUnnecessaryUsage);
 		subCatBuilderAdvanced.add(sliderDamageSafeMargin);
 		subCatBuilderAdvanced.add(recastDelaySlider);
 		subCatBuilderAdvanced.add(randomDelaySlider);
